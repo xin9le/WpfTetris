@@ -13,7 +13,7 @@ This event is a part of [Japan ComCamp 2016 powered by MVPs](https://technet.mic
 
 # Explanation document
 
-<div style="width: 608px; max-width: 100%; margin-bottom:5px;"><a href="https://docs.com/xin9le/7952/tetris-algorithm?c=jAeeUb" title="Tetris Algorithm" target="_blank" style="font-family: 'Segoe UI'">Tetris Algorithm</a><span style="font-family: 'Segoe UI Light'">—</span><a href="https://docs.com/xin9le" target="_blank" style="font-family: 'Segoe UI'">Takaaki Suzuki</a><a style="float: right; font-family: 'Segoe UI'" href="https://docs.com/xin9le/7952/tetris-algorithm?c=jAeeUb" target="_blank">Docs.com</a></div><iframe src="https://docs.com/d/embed/D25194623-6358-2744-4120-001198989018%7eM6e212294-6895-8c92-323d-377eb21dfba2" frameborder="0" scrolling="no" width="608px" height="376px" style="max-width:100%" allowfullscreen="False"></iframe>
+[Tetris Algorithm](https://doc.co/Eh8bBZ/jAeeUb)
 
 
 
