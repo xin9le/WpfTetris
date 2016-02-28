@@ -91,13 +91,13 @@ namespace WpfTetris.Views
             {
                 switch (e.Key)
                 {
-                    case Key.Z:     this.Game.Field.RotationTetrimino(RotationDirection.Left);   break;
-                    case Key.X:     this.Game.Field.RotationTetrimino(RotationDirection.Right);  break;
-                    case Key.Up:    this.Game.Field.RotationTetrimino(RotationDirection.Right);  break;
-                    case Key.Right: this.Game.Field.MoveTetrimino(MoveDirection.Right);  break;
-                    case Key.Down:  this.Game.Field.MoveTetrimino(MoveDirection.Down);   break;
-                    case Key.Left:  this.Game.Field.MoveTetrimino(MoveDirection.Left);   break;
-                    case Key.Space: this.Game.Play();  break;
+                    case Key.Z:      this.Game.Field.RotationTetrimino(RotationDirection.Left);   break;
+                    case Key.X:      this.Game.Field.RotationTetrimino(RotationDirection.Right);  break;
+                    case Key.Up:     this.Game.Field.RotationTetrimino(RotationDirection.Right);  break;
+                    case Key.Right:  this.Game.Field.MoveTetrimino(MoveDirection.Right);  break;
+                    case Key.Down:   this.Game.Field.MoveTetrimino(MoveDirection.Down);   break;
+                    case Key.Left:   this.Game.Field.MoveTetrimino(MoveDirection.Left);   break;
+                    case Key.Escape: this.Game.Play();  break;
                 }
             };
         }
