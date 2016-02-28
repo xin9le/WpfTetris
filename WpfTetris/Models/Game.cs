@@ -41,6 +41,12 @@ namespace WpfTetris.Models
         /// </summary>
         public IReadOnlyReactiveProperty<TetriminoKind> NextTetrimino => this.nextTetrimino;
         private readonly ReactiveProperty<TetriminoKind> nextTetrimino = new ReactiveProperty<TetriminoKind>();
+
+
+        /// <summary>
+        /// 前回のスピードアップ回数を取得または設定します。
+        /// </summary>
+        private int PreviousCount { get; set; }
         #endregion
 
 
@@ -50,14 +56,13 @@ namespace WpfTetris.Models
         /// </summary>
         public Game()
         {
-            int last = 0;
             this.Field.PlacedBlocks.Subscribe(_ =>
             {
                 //--- 10 行消すたびにスピードアップ
                 var count = this.Result.TotalRowCount.Value / 10;
-                if (count > last)
+                if (count > this.PreviousCount)
                 {
-                    last = count;
+                    this.PreviousCount = count;
                     this.Field.SpeedUp();
                 }
 
@@ -80,6 +85,7 @@ namespace WpfTetris.Models
             if (this.IsPlaying.Value)
                 return;
 
+            this.PreviousCount = 0;
             this.nextTetrimino.Value = Tetrimino.RandomKind();
             this.Field.Activate(Tetrimino.RandomKind());
             this.Result.Clear();
