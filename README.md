@@ -13,13 +13,41 @@ This event is a part of [Japan ComCamp 2016 powered by MVPs](https://technet.mic
 
 
 
-# Explanation document
+
+## Feature
+
+* Automatic fall down by timer
+* Move / Rotation / Fall down
+* Fix tetrimino immediately
+* Display next tetrimino
+* Display deleted rows information
+* Speed-up gradually (when tetrimino is deleted)
+* [Super rotation](https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%88%E3%83%AA%E3%82%B9)
+
+
+
+## How to use
+
+| キー | 動作 |
+|---|---|
+| ↑ | Rotation right |
+| ↓ | Fall down |
+| ← | Move left |
+| → | Move right |
+| X | Rotation right |
+| Z | Rotation left |
+| Space | Fix tetrimino immediately |
+| Esc | Restart |
+
+
+
+## Explanation document
 
 [Tetris Algorithm](https://doc.co/Eh8bBZ/jAeeUb)
 
 
 
-# Installation
+## Installation
 
 This game is provided as ClickOnce application. 
 You can download and install it from following URL.
@@ -29,13 +57,13 @@ You can download and install it from following URL.
 
 
 
-# License
+## License
 
 This game is provided under MIT License.
 
 
 
 
-# Author
+## Author
 
 Takaaki Suzuki (a.k.a @xin9le) is software developer in Japan who awarded Microsoft MVP for Visual Studio and Development Technologies (Visual C#) since July 2012.
