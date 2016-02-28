@@ -115,32 +115,8 @@ namespace WpfTetris.Models
             if (direction == MoveDirection.Down)
             {
                 this.Timer.Stop();
-                if (this.Tetrimino.Value.Move(direction, this.CheckCollision))
-                {
-                    this.Tetrimino.ForceNotify();
-                }
-                else
-                {
-                    //--- テトリミノを配置済みとして確定し、ブロックが揃ってたら消す
-                    var result = this.RemoveAndFixBlock();
-
-                    //--- 揃った行数を通知
-                    var removedRowCount = result.Item1;
-                    if (removedRowCount > 0)
-                        this.lastRemovedRowCount.Value = removedRowCount;
-
-                    //--- ブロックが上限を超えていたらゲームオーバー
-                    if (result.Item2.Any(x => x.Position.Row < 0))
-                    {
-                        this.isActivated.Value = false;
-                        this.isUpperLimitOvered.Value = true;
-                        return;
-                    }
-
-                    //--- 更新
-                    this.Tetrimino.Value = null;  //--- 一旦クリア
-                    this.placedBlocks.Value = result.Item2;
-                }
+                if (this.Tetrimino.Value.Move(direction, this.CheckCollision))  this.Tetrimino.ForceNotify();
+                else                                                            this.FixTetrimino();
                 this.Timer.Start();
                 return;
             }
@@ -162,6 +138,48 @@ namespace WpfTetris.Models
 
             if (this.Tetrimino.Value.Rotation(direction, this.CheckCollision))
                 this.Tetrimino.ForceNotify();
+        }
+
+
+        /// <summary>
+        /// テトリミノを強制的に確定させます。
+        /// </summary>
+        public void ForceFixTetrimino()
+        {
+            if (!this.isActivated.Value)
+                return;
+
+            this.Timer.Stop();
+            while (this.Tetrimino.Value.Move(MoveDirection.Down, this.CheckCollision));  //--- 衝突するまで動かし続ける
+            this.FixTetrimino();
+            this.Timer.Start();
+        }
+
+
+        /// <summary>
+        /// テトリミノを確定させます。
+        /// </summary>
+        private void FixTetrimino()
+        {
+            //--- テトリミノを配置済みとして確定し、ブロックが揃ってたら消す
+            var result = this.RemoveAndFixBlock();
+
+            //--- 揃った行数を通知
+            var removedRowCount = result.Item1;
+            if (removedRowCount > 0)
+                this.lastRemovedRowCount.Value = removedRowCount;
+
+            //--- ブロックが上限を超えていたらゲームオーバー
+            if (result.Item2.Any(x => x.Position.Row < 0))
+            {
+                this.isActivated.Value = false;
+                this.isUpperLimitOvered.Value = true;
+                return;
+            }
+
+            //--- 更新
+            this.Tetrimino.Value = null;  //--- 一旦クリア
+            this.placedBlocks.Value = result.Item2;
         }
 
 

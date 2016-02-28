@@ -90,6 +90,12 @@ namespace WpfTetris.ViewModels
         /// </summary>
         /// <param name="direction">回転方向</param>
         public void RotationTetrimino(RotationDirection direction) => this.Field.RotationTetrimino(direction);
+
+
+        /// <summary>
+        /// テトリミノを強制的に確定させます。
+        /// </summary>
+        public void ForceFixTetrimino() => this.Field.ForceFixTetrimino();
         #endregion
     }
 }

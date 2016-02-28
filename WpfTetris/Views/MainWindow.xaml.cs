@@ -98,6 +98,7 @@ namespace WpfTetris.Views
                     case Key.Down:   this.Game.Field.MoveTetrimino(MoveDirection.Down);   break;
                     case Key.Left:   this.Game.Field.MoveTetrimino(MoveDirection.Left);   break;
                     case Key.Escape: this.Game.Play();  break;
+                    case Key.Space:  this.Game.Field.ForceFixTetrimino();  break;
                 }
             };
         }
