@@ -43,7 +43,7 @@ This event is a part of [Japan ComCamp 2016 powered by MVPs](https://technet.mic
 
 ## Explanation document
 
-[Tetris Algorithm](https://doc.co/Eh8bBZ/jAeeUb)
+[Tetris Algorithm](https://www.slideshare.net/xin9le/tetris-algorithm)
 
 
 
@@ -66,4 +66,4 @@ This game is provided under MIT License.
 
 ## Author
 
-Takaaki Suzuki (a.k.a @xin9le) is software developer in Japan who awarded Microsoft MVP for Visual Studio and Development Technologies (Visual C#) since July 2012.
+Takaaki Suzuki (a.k.a [@xin9le](https://twitter.com/xin9le)) is software developer in Japan who awarded Microsoft MVP for Developer Technologies (C#) since July 2012.
