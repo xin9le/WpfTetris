@@ -1,3 +1,7 @@
+***This project has moved to [MvvmTetris](https://github.com/xin9le/MvvmTetris)***.
+
+
+
 # WpfTetris
 
 MVVM based Tetris application sample using ReactiveProperty on WPF. You can study following through this sample.
